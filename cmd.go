@@ -36,7 +36,7 @@ func main() {
 	}
 	errWriter := &filteringWriter{
 		removeStr: "Password:",
-		w:         os.Stdout,
+		w:         os.Stderr,
 	}
 	cmd.Stdout = outWriter
 	cmd.Stderr = errWriter
