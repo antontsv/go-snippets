@@ -15,6 +15,9 @@ var base16 = []rune("abcdef0123456789")
 
 // RandBase16 gives random string on len n using only base16 characters
 func RandBase16(n int) string {
+	if n <= 0 {
+		return ""
+	}
 	b := make([]rune, n)
 	for i := range b {
 		b[i] = base16[rand.Intn(len(base16))]
